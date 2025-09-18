@@ -133,4 +133,4 @@ with gr.Blocks() as demo:
     user_input.submit(respond, [user_input, chatbot], [chatbot, user_input])
     clear.click(_clear_all, None, [chatbot, user_input])
 
-demo.launch(share=True)
+demo.launch(server_name="0.0.0.0", server_port=int(os.environ.get("PORT", 7860)))
