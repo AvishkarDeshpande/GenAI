@@ -6,6 +6,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain.embeddings import HuggingFaceEmbeddings
 import gradio as gr
+import sys
+import types
+
+# prevent import error for audioop
+sys.modules['pyaudioop'] = types.ModuleType('pyaudioop')
 
 # 🔑 Initialize LLM
 llm = ChatGroq(
